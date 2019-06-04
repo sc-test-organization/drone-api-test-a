@@ -16,7 +16,6 @@ pipeline:
   publish:
     image: nexus.admin.sharecare.com/drone-nexus-docker
     version: jq -r .version package.json
-    privileged: true
     when:
       branch: [ feature/*, develop, release/* ]
       event: push
