@@ -1,0 +1,28 @@
+{
+  "name": "drone-api-test-a",
+  "description": "Generic testing app for Maestro-related stuffs",
+  "mongo": {
+    "database": "drone-api-test-a",
+    "url": ""
+  },
+  "route": {
+    "scheme": "http",
+    "host": "localhost:3000",
+    "path": "/api/drone-api-test-a"
+  },
+  "bind": {
+    "name": "drone-api-test-a_3000",
+    "port": 3000,
+    "threads": 1
+  },
+  "swagger": {
+    "host": "maestro.qa.admin.sharecare.com",
+    "basePath": "/api/drone-api-test-a"
+  },
+  "maestro": {
+    "orchestration": {
+      "host": "http://maestro-orchestration-service",
+      "scope": "service"
+    }
+  }
+}

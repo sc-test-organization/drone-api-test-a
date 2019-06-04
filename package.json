@@ -1,0 +1,47 @@
+{
+  "name": "drone-api-test-q",
+  "version": "1.0.0",
+  "description": "Test service for Drone API and Maestro",
+  "main": "app.js",
+  "private": true,
+  "scripts": {
+    "start": "node src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sc-test-organization/drone-api-test-a.git"
+  },
+  "keywords": [
+    "cloud",
+    "platform",
+    "maestro",
+    "services"
+  ],
+  "author": "Bob Baker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sc-test-organization/drone-api-test-a/issues"
+  },
+  "homepage": "https://github.com/sc-test-organization/drone-api-test-a#readme",
+  "dependencies": {
+    "@sharecare/cache-manager": "^1.0.2",
+    "@sharecare/express-rest": "^1.0.4",
+    "@sharecare/healthcheck": "^1.0.4",
+    "@sharecare/maestro-authorization": "^1.0.3",
+    "@sharecare/mongo": "^1.0.0",
+    "@sharecare/prometheus-client": "^3.1.1",
+    "@sharecare/request": "^1.0.1",
+    "@sharecare/request-local-context": "^1.0.1",
+    "ajv": "^5.2.2",
+    "bunyan": "^1.8.10",
+    "circular-json": "^0.3.3",
+    "config": "^1.30.0",
+    "dashify": "^2.0.0",
+    "debug": "^4.0.0",
+    "events": "^3.0.0",
+    "lodash": "^4.17.10",
+    "swagger-jsdoc": "^3.0.2",
+    "swagger-ui-express": "^2.0.4"
+  },
+  "devDependencies": {}
+}

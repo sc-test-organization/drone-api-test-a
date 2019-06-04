@@ -1,0 +1,63 @@
+pipeline:
+
+  build:
+    image: mhart/alpine-node:latest
+    environment:
+      - NPM_CONFIG_USERCONFIG=/secrets/.npmrc
+    commands:
+      - npm install
+    volumes: [ '/secrets:/secrets' ]
+
+  clean:
+    image: mhart/alpine-node:latest
+    commands:
+      - rm -rf ./node-modules
+      - npm install --production
+
+  publish:
+    image: nexus.admin.sharecare.com/drone-nexus-docker
+    version: jq -r .version package.json
+    privileged: true
+    volumes: [ '/secrets:/secrets' ]
+    when:
+      branch: [ feature/*, develop, release/* ]
+      event: push
+
+#  deployDEV:
+#    image: nexus.admin.sharecare.com/drone-kubernetes-deploy
+#    version: jq -r .version package.json
+#    namespace: dev
+#    when:
+#      branch: develop
+#      event: push
+#
+#  deployQA:
+#    image: nexus.admin.sharecare.com/drone-kubernetes-deploy
+#    version: jq -r .version package.json
+#    namespace: qa
+#    when:
+#      branch: release/*
+#      event: push
+
+  archive:
+    image: nexus.admin.sharecare.com/drone-build-plugin
+    when:
+      status: [ success, failure ]
+      branch: [ feature/*, develop, release/* ]
+      event: push
+      local: false
+
+  teams:
+    image: nexus.admin.sharecare.com/drone-teams-notification
+    webhook: 'https://outlook.office.com/webhook/87b7de90-c5c8-4dc9-9235-c1fe3bd41350@4791286b-0707-4782-8dae-89fe4a320b09/IncomingWebhook/8bfd7b92b7c243b5be907232502cd5f5/73208d33-54b5-4aa8-af10-139d155a7ef2'
+    when:
+      status: [ success, failure ]
+      local: false
+
+  email:
+    image: nexus.admin.sharecare.com/drone-email-notification
+    addresses: [ 'bbaker@sharecare.com' ]
+    volumes: [ '/secrets:/secrets' ]
+    when:
+      status: [ success, failure ]
+      local: false

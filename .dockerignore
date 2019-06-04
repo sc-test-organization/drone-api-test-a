@@ -1,0 +1,17 @@
+npm-debug.log
+/.eslintrc.js
+/.yo-rc.json
+*.iml
+/README.md
+/.gitignore
+/newrelic_agent.log
+/admin-kubeconfig.yaml
+/manifests/
+/.npm-debug.log.swp
+*.tgz
+/package-lock.json
+/.idea/
+/.editorconfig
+/.npmrc
+config/local.json
+/.DS_Store

@@ -1,0 +1,27 @@
+{
+  "name": "drone-api-test-a",
+  "ports": {
+    "external": 80,
+    "container": 3000
+  },
+  "host": "maestro<.env>.admin.sharecare.com",
+  "path": "/api/drone-api-test-a",
+  "stripPrefix": false,
+  "spec": "node",
+  "prometheus": true,
+  "healthcheck": {
+    "readinessProbe": {
+      "httpGet": {
+        "path": "/api/drone-api-test-a/healthcheck"
+      }
+    },
+    "livenessProbe": {
+      "httpGet": {
+        "path": "/api/drone-api-test-a/healthcheck"
+      }
+    }
+  },
+  "team": "maestro",
+  "env": [],
+  "secrets": []
+}

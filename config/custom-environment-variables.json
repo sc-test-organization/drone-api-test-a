@@ -1,0 +1,6 @@
+{
+  "env": "NODE_ENV",
+  "mongo": {
+    "url": "MAESTRO_MONGO_DRONEAPITESTA_CONNSTR"
+  }
+}
