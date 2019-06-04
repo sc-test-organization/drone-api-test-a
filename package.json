@@ -1,6 +1,6 @@
 {
   "name": "drone-api-test-q",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Test service for Drone API and Maestro",
   "main": "app.js",
   "private": true,

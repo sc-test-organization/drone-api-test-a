@@ -8,7 +8,7 @@
   "path": "/api/drone-api-test-a",
   "stripPrefix": false,
   "spec": "node",
-  "prometheus": true,
+  "prometheus": false,
   "healthcheck": {
     "readinessProbe": {
       "httpGet": {

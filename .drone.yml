@@ -20,14 +20,14 @@ pipeline:
       branch: [ feature/*, develop, release/* ]
       event: push
 
-#  deployDEV:
-#    image: nexus.admin.sharecare.com/drone-kubernetes-deploy
-#    version: jq -r .version package.json
-#    namespace: dev
-#    when:
-#      branch: develop
-#      event: push
-#
+  deployDEV:
+    image: nexus.admin.sharecare.com/drone-kubernetes-deploy
+    version: jq -r .version package.json
+    namespace: dev
+    when:
+      branch: develop
+      event: push
+
 #  deployQA:
 #    image: nexus.admin.sharecare.com/drone-kubernetes-deploy
 #    version: jq -r .version package.json
