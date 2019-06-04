@@ -6,7 +6,6 @@ pipeline:
       - NPM_CONFIG_USERCONFIG=/secrets/.npmrc
     commands:
       - npm install
-    volumes: [ '/secrets:/secrets' ]
 
   clean:
     image: mhart/alpine-node:latest
@@ -18,7 +17,6 @@ pipeline:
     image: nexus.admin.sharecare.com/drone-nexus-docker
     version: jq -r .version package.json
     privileged: true
-    volumes: [ '/secrets:/secrets' ]
     when:
       branch: [ feature/*, develop, release/* ]
       event: push
@@ -57,7 +55,6 @@ pipeline:
   email:
     image: nexus.admin.sharecare.com/drone-email-notification
     addresses: [ 'bbaker@sharecare.com' ]
-    volumes: [ '/secrets:/secrets' ]
     when:
       status: [ success, failure ]
       local: false
