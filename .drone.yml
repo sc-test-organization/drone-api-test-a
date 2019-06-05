@@ -22,6 +22,7 @@ pipeline:
 
   deployDEV:
     image: nexus.admin.sharecare.com/drone-kubernetes-deploy
+    pull: true
     version: jq -r .version package.json
     namespace: dev
     when:
@@ -38,6 +39,8 @@ pipeline:
 
   archive:
     image: nexus.admin.sharecare.com/drone-build-plugin
+    pull: true
+    debug: true
     when:
       status: [ success, failure ]
       branch: [ feature/*, develop, release/* ]
