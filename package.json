@@ -32,7 +32,7 @@
     "@sharecare/prometheus-client": "^3.1.1",
     "@sharecare/request": "^1.0.1",
     "@sharecare/request-local-context": "^1.0.1",
-    "ajv": "^5.2.2",
+    "ajv": "^6.12.3",
     "bunyan": "^1.8.10",
     "circular-json": "^0.3.3",
     "config": "^1.30.0",
