@@ -35,7 +35,7 @@
     "ajv": "^5.2.2",
     "bunyan": "^1.8.10",
     "circular-json": "^0.3.3",
-    "config": "^1.30.0",
+    "config": "^3.3.8",
     "dashify": "^2.0.0",
     "debug": "^4.0.0",
     "events": "^3.0.0",
