@@ -3,3 +3,4 @@ policies:
 - repository: sc-test-organization/kubes-deployment-testing
   permissions:
     packages: read
+    contents: read
