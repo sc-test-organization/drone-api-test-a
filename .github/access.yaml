@@ -1,0 +1,5 @@
+self: sc-test-organization/drone-api-test-a
+policies:
+- repository: sc-test-organization/kubes-deployment-testing
+  permissions:
+    packages: read
